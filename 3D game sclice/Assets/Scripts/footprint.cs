@@ -5,7 +5,7 @@ using UnityEngine;
 public class footprint : MonoBehaviour {
 
     [SerializeField] GameObject m_footprint;
-    [SerializeField] AudioClip m_audioClip;
+    [SerializeField] readonly AudioClip m_audioClip;
 
     private enum Direction { right, left };
 
@@ -30,12 +30,12 @@ public class footprint : MonoBehaviour {
 
         Direction footDirection;
 
-        if (scale > 0) // left foot
+        if (scale > 0)
         {
             footDirection = Direction.left;
             Instantiate(m_footprint, m_leftFootTransform.position, m_leftFootTransform.rotation);
         }
-        else // right foot
+        else 
         {
             footDirection = Direction.right;
             Instantiate(m_footprint, m_rightFootTransform.position, m_rightFootTransform.rotation);
