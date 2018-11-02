@@ -8,6 +8,10 @@ public class Test : MonoBehaviour {
     public GameObject Dplayer;
     static Animator anim;
 
+    [SerializeField] AudioClip audiodeath;
+
+    private AudioSource deathSfx;
+
     private PlayerControl m_playerScript;
 
 
@@ -15,6 +19,7 @@ public class Test : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         m_playerScript = FindObjectOfType<PlayerControl>();
+        deathSfx = GetComponent<AudioSource>();
 
     }
 
@@ -72,5 +77,14 @@ public class Test : MonoBehaviour {
         }
     }
 
+    public void zombidie()
+    {
+        playSsound();
+    }
 
+    private void playSsound()
+    {
+    deathSfx.PlayOneShot(audiodeath);
+
+    }
 }

@@ -243,11 +243,11 @@ ModelImporter:
       bodyMask: 01000000010000000000000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.62176853
-        functionName: test
+      - time: 0.43459916
+        functionName: zombidie
         data: 
-        objectReferenceParameter: {fileID: 1533059307749604, guid: cde83a5670f758a4a99290206b696dcd,
-          type: 2}
+        objectReferenceParameter: {fileID: 11500000, guid: 3df8613fb196fa741b4afb1456fea849,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
