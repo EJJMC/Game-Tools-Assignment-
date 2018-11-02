@@ -109,7 +109,7 @@ public class PlayerControl : MonoBehaviour
 
             Destroy(gameObject, DestroyTime);
 
-            Debug.Log("ya dead son");
+            Debug.Log("you died");
         }
     }
 
