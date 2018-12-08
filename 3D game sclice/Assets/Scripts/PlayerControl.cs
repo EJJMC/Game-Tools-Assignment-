@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -107,8 +108,8 @@ public class PlayerControl : MonoBehaviour
         {
             m_animator.SetTrigger("death");
 
-            Destroy(gameObject, DestroyTime);
-
+            //Destroy(gameObject, DestroyTime);
+            SceneManager.LoadScene(0);
             Debug.Log("you died");
         }
     }
