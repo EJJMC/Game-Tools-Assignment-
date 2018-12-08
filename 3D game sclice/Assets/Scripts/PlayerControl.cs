@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
 
         Die();
 
-        float zombidist = Vector3.Distance(zombi.position, transform.position);
+        float zombidist = Vector3.Distance(zombi.position, transform.position); // so zombi follows player
 
         float m_turn = Input.GetAxis("Horizontal");
         m_animator.SetFloat("turn", m_turn);
@@ -38,15 +38,16 @@ public class PlayerControl : MonoBehaviour
         m_animator.SetFloat("forward", m_forward);
 
 
-        bool m_jump = Input.GetButtonDown("Jump");
+        bool m_jump = Input.GetButtonDown("Jump"); // jumping 
 
         if (m_jump)
         {
             m_animator.SetTrigger("Jump");
         }
 
+        //attacking animations
 
-        bool m_kick = Input.GetKeyDown(KeyCode.M);
+        bool m_kick = Input.GetKeyDown(KeyCode.M); 
         m_animator.SetBool("Kick", m_kick);
 
         bool m_punch = Input.GetKeyDown(KeyCode.V);
@@ -59,7 +60,7 @@ public class PlayerControl : MonoBehaviour
         m_animator.SetBool("Elbow", m_elbow);
 
 
-
+        //Killing zombi
 
         if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
         {

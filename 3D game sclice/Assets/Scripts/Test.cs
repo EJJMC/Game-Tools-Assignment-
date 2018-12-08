@@ -27,14 +27,14 @@ public class Test : MonoBehaviour {
     void Update()
     {
 
-        if (Vector3.Distance(player.position, this.transform.position) < 2)
+        if (Vector3.Distance(player.position, this.transform.position) < 2)  //Sets distance for when zombi follows player
         {
             Vector3 direction = player.position - this.transform.position;
             direction.y = 0;
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
 
 
-            anim.SetBool("Idle", false);
+            anim.SetBool("Idle", false); // When player is in range of the zombi
             if (direction.magnitude > 1)
             {
                 this.transform.Translate(0, 0, 0.009f);
@@ -42,7 +42,7 @@ public class Test : MonoBehaviour {
                 anim.SetBool("Attacking", false);
             }
 
-            else if (direction.magnitude < 1)
+            else if (direction.magnitude < 1) // If zombi next to player
             {
                 anim.SetBool("Attacking", true);
                 anim.SetBool("Walking", false);
@@ -54,7 +54,7 @@ public class Test : MonoBehaviour {
 
         else
         {
-            anim.SetBool("Idle", true);
+            anim.SetBool("Idle", true); // if Zombi is not near the player
             anim.SetBool("Walking", false);
             anim.SetBool("Attacking", false);
         }
@@ -62,7 +62,7 @@ public class Test : MonoBehaviour {
 
     IEnumerator hit()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1f); // zombi damaging the player
         m_playerScript.health = m_playerScript.health - 1;
 
         Debug.Log(m_playerScript.health);
@@ -71,15 +71,15 @@ public class Test : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag=="Player")
+        if(other.gameObject.tag=="Player") // if zombi is hit by player
             {
             StartCoroutine(hit());
         }
     }
 
-    public void zombidie()
+    public void zombidie() // plays death sound effect
     {
-        playSsound();
+        playSsound(); 
     }
 
     private void playSsound()
