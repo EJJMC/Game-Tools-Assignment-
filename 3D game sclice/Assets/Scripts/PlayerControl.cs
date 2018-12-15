@@ -13,6 +13,9 @@ public class PlayerControl : MonoBehaviour
     public GameObject SpawnItem;
     public Transform SpawnPos;
 
+    
+
+
     public int health = 5;
     int DestroyTime = 4;
 
@@ -22,7 +25,10 @@ public class PlayerControl : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_ane = enemy.GetComponent<Animator>();
         Instantiate(SpawnItem, SpawnPos);
+
     }
+
+
 
     void FixedUpdate()
     {
@@ -38,6 +44,7 @@ public class PlayerControl : MonoBehaviour
         m_animator.SetFloat("forward", m_forward);
 
 
+
         bool m_jump = Input.GetButtonDown("Jump"); // jumping 
 
         if (m_jump)
@@ -47,7 +54,7 @@ public class PlayerControl : MonoBehaviour
 
         //attacking animations
 
-        bool m_kick = Input.GetKeyDown(KeyCode.M); 
+        bool m_kick = Input.GetKeyDown(KeyCode.M);
         m_animator.SetBool("Kick", m_kick);
 
         bool m_punch = Input.GetKeyDown(KeyCode.V);
@@ -62,17 +69,34 @@ public class PlayerControl : MonoBehaviour
         bool m_Parry = Input.GetKeyDown(KeyCode.P);
         m_animator.SetBool("Parrying", m_Parry);
 
+        //pickup animation
+        bool m_pick = Input.GetKeyDown(KeyCode.C);
+        m_animator.SetBool("Pick", m_pick);
+
+
+
 
         //Killing zombi
-
         if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
         {
 
             m_kick = true;
 
             m_ane.SetTrigger("dead");
+
+        }
+
+        if ((Input.GetKeyDown(KeyCode.C)))
+        {
+
+            m_pick = true;
+
+            Destroy(gameObject, 2);
+
             
         }
+
+
 
         if ((Input.GetKeyDown(KeyCode.V)) && zombidist < 2)
         {
@@ -103,6 +127,8 @@ public class PlayerControl : MonoBehaviour
 
 
         }
+
+
     }
     void Die()
     {
@@ -118,11 +144,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
-
-
 }
-
 
 
 
