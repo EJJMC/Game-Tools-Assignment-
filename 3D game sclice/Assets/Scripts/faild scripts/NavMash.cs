@@ -11,6 +11,9 @@ public class NavMash : MonoBehaviour
 
     NavMeshAgent _navMeshAgent;
 
+    private int m_CurrentWaypoint;
+
+
 
 
     // Use this for initialization

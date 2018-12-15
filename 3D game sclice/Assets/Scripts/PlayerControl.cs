@@ -59,6 +59,9 @@ public class PlayerControl : MonoBehaviour
         bool m_elbow = Input.GetKeyDown(KeyCode.N);
         m_animator.SetBool("Elbow", m_elbow);
 
+        bool m_Parry = Input.GetKeyDown(KeyCode.P);
+        m_animator.SetBool("Parrying", m_Parry);
+
 
         //Killing zombi
 
