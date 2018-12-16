@@ -13,6 +13,10 @@ public class PlayerControl : MonoBehaviour
     public GameObject SpawnItem;
     public Transform SpawnPos;
 
+    Shader shader1;
+    Shader shader2;
+    Renderer rend;
+
 
     public GameObject pickup;
 
@@ -27,6 +31,11 @@ public class PlayerControl : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_ane = enemy.GetComponent<Animator>();
         Instantiate(SpawnItem, SpawnPos);
+
+        rend = GetComponent<Renderer>();
+        shader1 = Shader.Find("Power up");
+        shader2 = Shader.Find("Default");
+
 
     }
 
@@ -95,8 +104,19 @@ public class PlayerControl : MonoBehaviour
 
             Destroy(pickup, 2);
 
-            
+            {
+                if (rend.material.shader == shader1)
+                {
+                    rend.material.shader = shader1;
+                }
+                else
+                {
+                    rend.material.shader = shader1;
+                }
+            }
         }
+    
+
 
 
 
@@ -132,6 +152,8 @@ public class PlayerControl : MonoBehaviour
 
 
     }
+
+  
     void Die()
     {
         DestroyTime = 5;
