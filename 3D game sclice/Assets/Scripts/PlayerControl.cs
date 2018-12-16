@@ -13,7 +13,9 @@ public class PlayerControl : MonoBehaviour
     public GameObject SpawnItem;
     public Transform SpawnPos;
 
-    
+
+    public GameObject pickup;
+
 
 
     public int health = 5;
@@ -91,7 +93,7 @@ public class PlayerControl : MonoBehaviour
 
             m_pick = true;
 
-            Destroy(gameObject, 2);
+            Destroy(pickup, 2);
 
             
         }
