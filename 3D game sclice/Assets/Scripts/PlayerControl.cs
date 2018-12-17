@@ -97,28 +97,7 @@ public class PlayerControl : MonoBehaviour
 
         }
 
-        if ((Input.GetKeyDown(KeyCode.C)))
-        {
-
-            m_pick = true;
-
-            Destroy(pickup, 2);
-
-            {
-                if (rend.material.shader == shader1)
-                {
-                    rend.material.shader = shader1;
-                }
-                else
-                {
-                    rend.material.shader = shader1;
-                }
-            }
-        }
     
-
-
-
 
         if ((Input.GetKeyDown(KeyCode.V)) && zombidist < 2)
         {
@@ -150,6 +129,26 @@ public class PlayerControl : MonoBehaviour
 
         }
 
+        // Power Up script
+        if ((Input.GetKeyDown(KeyCode.C)))
+        {
+
+            m_pick = true;
+
+            Destroy(pickup, 2);
+
+            {
+                if (rend.material.shader == shader1)
+                {
+                    rend.material.shader = shader1;
+                }
+                else
+                {
+                    rend.material.shader = shader1;
+                }
+            }
+        }
+
 
     }
 
@@ -163,7 +162,7 @@ public class PlayerControl : MonoBehaviour
             m_animator.SetTrigger("death");
 
             //Destroy(gameObject, DestroyTime);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
             Debug.Log("you died");
         }
     }

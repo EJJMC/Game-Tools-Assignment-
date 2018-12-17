@@ -981,7 +981,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 730808189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.54, y: 0.84, z: 8.85}
+  m_LocalPosition: {x: -3.54, y: 0.84, z: 11.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1246,7 +1246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1249658081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.07, y: 0.5, z: 3.29}
+  m_LocalPosition: {x: -5.07, y: 0.33, z: 7.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1864,6 +1864,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1914100655}
+  - component: {fileID: 1914100657}
+  - component: {fileID: 1914100656}
   m_Layer: 0
   m_Name: Zombi Spawn
   m_TagString: Untagged
@@ -1878,12 +1880,45 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1914100654}
   m_LocalRotation: {x: -0, y: -0.9375145, z: -0, w: -0.34794638}
-  m_LocalPosition: {x: -2.11, y: -0.028, z: 8.8}
+  m_LocalPosition: {x: 0.33, y: 0.14, z: 7.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -220.724, z: 0}
+--- !u!114 &1914100656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914100654}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ed25115a49bb545a49044f4954b91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destinations: {fileID: 688192829}
+--- !u!195 &1914100657
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914100654}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &1915144925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: a8c5f9cfca2f20547ab06da41a463c9b,
