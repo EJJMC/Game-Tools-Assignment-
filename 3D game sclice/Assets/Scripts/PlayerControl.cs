@@ -7,11 +7,11 @@ public class PlayerControl : MonoBehaviour
 {
 
     private Animator m_animator;
-    public GameObject enemy;
-    public Transform zombi;
-    public Animator m_ane;
-    public GameObject SpawnItem;
-    public Transform SpawnPos;
+    private GameObject enemy;
+    // public transform zombi;
+    private Animator m_ane;
+    private GameObject SpawnItem;
+    private Transform SpawnPos;
 
     Shader shader1;
     Shader shader2;
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
-        m_ane = enemy.GetComponent<Animator>();
+        
         Instantiate(SpawnItem, SpawnPos);
 
         rend = GetComponent<Renderer>();
@@ -41,12 +41,12 @@ public class PlayerControl : MonoBehaviour
 
 
 
-    void FixedUpdate()
+    void Update()
     {
 
         Die();
 
-        float zombidist = Vector3.Distance(zombi.position, transform.position); // so zombi follows player
+        //float zombidist = Vector3.Distance(zombi.position, transform.position); // so zombi follows player
 
         float m_turn = Input.GetAxis("Horizontal");
         m_animator.SetFloat("turn", m_turn);
@@ -88,7 +88,7 @@ public class PlayerControl : MonoBehaviour
 
 
         //Killing zombi
-        if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
+      /*  if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
         {
 
             m_kick = true;
@@ -128,6 +128,7 @@ public class PlayerControl : MonoBehaviour
 
 
         }
+        */
 
         // Power Up script
         if ((Input.GetKeyDown(KeyCode.C)))
