@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
-
+    [SerializeField] AudioClip audiopower;
     private Animator m_animator;
     private GameObject enemy;
     // public transform zombi;
@@ -21,6 +21,10 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject pickup;
 
+
+  
+
+    private AudioSource powerSfx;
 
 
     public int health = 5;
@@ -175,9 +179,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
-
-   
-
+       
 
   
     void Die()
@@ -194,7 +196,20 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void powerup()
+    {
+        playAudio();
+    }
+
+    private void playAudio()
+    {
+        powerSfx.PlayOneShot(audiopower);
+
+    }
 }
+
+
+
 
 
 
