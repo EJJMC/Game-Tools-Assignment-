@@ -10,8 +10,8 @@ public class PlayerControl : MonoBehaviour
     private GameObject enemy;
     // public transform zombi;
     private Animator m_ane;
-    private GameObject SpawnItem;
-    private Transform SpawnPos;
+   // public GameObject SpawnItem;
+   // private Transform SpawnPos;
 
     Shader shader1;
     Shader shader2;
@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         
-        Instantiate(SpawnItem, SpawnPos);
+       // Instantiate(SpawnItem, SpawnPos);
 
         rend = GetComponent<Renderer>();
         shader1 = Shader.Find("Power up");

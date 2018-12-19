@@ -7,7 +7,7 @@ public class WORK : MonoBehaviour {
 
     private enum NPCState { CHASE, PATROL };
     private NPCState m_NPCState;
-    [SerializeField] private NavMeshAgent m_NavMeshAgent;
+     private NavMeshAgent m_NavMeshAgent;
     private int m_CurrentWaypoint;
     private bool m_IsPlayerNear;
     private Animator m_Animator;
