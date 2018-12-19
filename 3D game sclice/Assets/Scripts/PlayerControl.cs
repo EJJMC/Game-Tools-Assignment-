@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
 
     Shader shader1;
     Shader shader2;
+    Shader shader3;
     Renderer rend;
 
 
@@ -35,6 +36,7 @@ public class PlayerControl : MonoBehaviour
         rend = GetComponent<Renderer>();
         shader1 = Shader.Find("Power up");
         shader2 = Shader.Find("Default");
+        shader3 = Shader.Find("Charge up");
 
 
     }
@@ -163,8 +165,15 @@ public class PlayerControl : MonoBehaviour
 
             Debug.Log("health +1");
 
+            if (rend.material.shader == shader2)
+            {
+                rend.material.shader = shader2;
+            }
+            else
+            {
+                rend.material.shader = shader2;
+            }
         }
-
     }
 
    
