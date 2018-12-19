@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] AudioClip audiopower;
     private Animator m_animator;
     private GameObject enemy;
-    // public transform zombi;
+     public Transform zombi;
     private Animator m_ane;
     // public GameObject SpawnItem;
     // private Transform SpawnPos;
@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour
 
         Die();
 
-        //float zombidist = Vector3.Distance(zombi.position, transform.position); // so zombi follows player
+        float zombidist = Vector3.Distance(zombi.position, transform.position); // so zombi follows player
 
         float m_turn = Input.GetAxis("Horizontal");
         m_animator.SetFloat("turn", m_turn);
@@ -98,12 +98,12 @@ public class PlayerControl : MonoBehaviour
 
 
         //Killing zombi
-        /*  if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
+          if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
           {
 
               m_kick = true;
 
-              m_ane.SetTrigger("dead");
+             // m_ane.SetTrigger("dead");
 
           }
 
@@ -114,31 +114,31 @@ public class PlayerControl : MonoBehaviour
 
               m_punch = true;
 
-              m_ane.SetTrigger("dead");
+            //  m_ane.SetTrigger("dead");
 
-          }
+        }
 
-          if ((Input.GetKeyDown(KeyCode.B)) && zombidist < 2)
+        if ((Input.GetKeyDown(KeyCode.B)) && zombidist < 2)
           {
 
               m_Crossp = true;
 
-              m_ane.SetTrigger("dead");
+            //  m_ane.SetTrigger("dead");
 
-          }
+        }
 
-          if ((Input.GetKeyDown(KeyCode.N)) && zombidist < 2)
+        if ((Input.GetKeyDown(KeyCode.N)) && zombidist < 2)
           {
 
               m_elbow = true;
 
-              m_ane.SetTrigger("dead");
+            //   m_ane.SetTrigger("dead");
 
-              zombidist = 0;
+           
 
 
           }
-          */
+          
 
         // Power Up script
         if ((Input.GetKeyDown(KeyCode.C)))
