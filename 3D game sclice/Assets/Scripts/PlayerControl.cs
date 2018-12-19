@@ -10,8 +10,8 @@ public class PlayerControl : MonoBehaviour
     private GameObject enemy;
     // public transform zombi;
     private Animator m_ane;
-   // public GameObject SpawnItem;
-   // private Transform SpawnPos;
+    // public GameObject SpawnItem;
+    // private Transform SpawnPos;
 
     Shader shader1;
     Shader shader2;
@@ -29,8 +29,8 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
-        
-       // Instantiate(SpawnItem, SpawnPos);
+
+        // Instantiate(SpawnItem, SpawnPos);
 
         rend = GetComponent<Renderer>();
         shader1 = Shader.Find("Power up");
@@ -80,6 +80,10 @@ public class PlayerControl : MonoBehaviour
         bool m_Parry = Input.GetKeyDown(KeyCode.P);
         m_animator.SetBool("Parrying", m_Parry);
 
+        //Health gain
+        bool m_Charge = Input.GetKeyDown(KeyCode.H);
+        m_animator.SetBool("Charge up", m_Charge);
+
         //pickup animation
         bool m_pick = Input.GetKeyDown(KeyCode.C);
         m_animator.SetBool("Pick", m_pick);
@@ -88,47 +92,47 @@ public class PlayerControl : MonoBehaviour
 
 
         //Killing zombi
-      /*  if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
-        {
+        /*  if ((Input.GetKeyDown(KeyCode.M)) && zombidist < 2)
+          {
 
-            m_kick = true;
+              m_kick = true;
 
-            m_ane.SetTrigger("dead");
+              m_ane.SetTrigger("dead");
 
-        }
-
-    
-
-        if ((Input.GetKeyDown(KeyCode.V)) && zombidist < 2)
-        {
-
-            m_punch = true;
-
-            m_ane.SetTrigger("dead");
-
-        }
-
-        if ((Input.GetKeyDown(KeyCode.B)) && zombidist < 2)
-        {
-
-            m_Crossp = true;
-
-            m_ane.SetTrigger("dead");
-
-        }
-
-        if ((Input.GetKeyDown(KeyCode.N)) && zombidist < 2)
-        {
-
-            m_elbow = true;
-
-            m_ane.SetTrigger("dead");
-
-            zombidist = 0;
+          }
 
 
-        }
-        */
+
+          if ((Input.GetKeyDown(KeyCode.V)) && zombidist < 2)
+          {
+
+              m_punch = true;
+
+              m_ane.SetTrigger("dead");
+
+          }
+
+          if ((Input.GetKeyDown(KeyCode.B)) && zombidist < 2)
+          {
+
+              m_Crossp = true;
+
+              m_ane.SetTrigger("dead");
+
+          }
+
+          if ((Input.GetKeyDown(KeyCode.N)) && zombidist < 2)
+          {
+
+              m_elbow = true;
+
+              m_ane.SetTrigger("dead");
+
+              zombidist = 0;
+
+
+          }
+          */
 
         // Power Up script
         if ((Input.GetKeyDown(KeyCode.C)))
@@ -150,8 +154,21 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        if ((Input.GetKeyDown(KeyCode.H)))
+        {
+
+            m_Charge = true;
+
+            health = health + 1;
+
+            Debug.Log("health +1");
+
+        }
 
     }
+
+   
+
 
   
     void Die()
