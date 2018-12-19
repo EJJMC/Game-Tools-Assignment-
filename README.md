@@ -1,7 +1,7 @@
 # Game-Tools-Assignment-
 game sclice 
 
-MAKE SURE THAT 'LightWeight RP' is installed in order to see the shaders. 
+MAKE SURE THAT 'LightWeight RP' is installed in the Package Manager in Unity to see the shaders. 
 
 Player Controls:
 
