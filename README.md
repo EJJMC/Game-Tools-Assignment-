@@ -1,6 +1,8 @@
 # Game-Tools-Assignment-
 game sclice 
 
+MAKE SURE THAT 'LightWeight RP' is installed in order to see the shaders. 
+
 Player Controls:
 
 W A S D or Arrow keys to move
